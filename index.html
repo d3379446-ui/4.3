@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dexter | Фан-сервис</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --blood: #8b0000;
+    --dark: #0a0a0a;
+    --black: #000;
+    --gray: #1a1a1a;
+    --light-gray: #aaa;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--black);
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* КРОВАВЫЕ ПОТЁКИ */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image: 
+        linear-gradient(to bottom, rgba(139,0,0,0.8) 0%, transparent 15%),
+        linear-gradient(to bottom, rgba(139,0,0,0.6) 0%, transparent 25%),
+        radial-gradient(circle at 20% 0%, #8b0000 0%, transparent 40%),
+        radial-gradient(circle at 80% 0%, #8b0000 0%, transparent 40%);
+    background-size: 100% 200px, 100% 300px, 300px 300px, 300px 300px;
+    background-repeat: no-repeat;
+    z-index: 0;
+    opacity: 0.4;
+}
+
+/* HERO */
+
+.hero {
+    height: 100vh;
+    background: url('https://s2.stc.all.kpcdn.net/putevoditel/serialy/wp-content/uploads/2021/10/f_167415-1024x576.jpg') center/cover no-repeat;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.75);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 5rem;
+    color: var(--blood);
+    letter-spacing: 6px;
+}
+
+.meta {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: var(--light-gray);
+}
+
+/* SECTIONS */
+
+section {
+    padding: 80px 10%;
+    position: relative;
+    z-index: 1;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: var(--blood);
+    text-align: center;
+}
+
+/* АКТЁРЫ */
+
+.actors {
+    max-width: 900px;
+    margin: auto;
+}
+
+.actor-card {
+    background: var(--gray);
+    margin-bottom: 20px;
+    border: 1px solid #222;
+    overflow: hidden;
+    transition: 0.4s;
+}
+
+.actor-header {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 15px;
+}
+
+.actor-header img {
+    width: 100px;
+    height: 120px;
+    object-fit: cover;
+    margin-right: 20px;
+    border: 2px solid var(--blood);
+}
+
+.actor-header h3 {
+    font-size: 1.5rem;
+}
+
+.actor-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+    background: #111;
+    padding: 0 20px;
+}
+
+.actor-card.active .actor-content {
+    max-height: 200px;
+    padding: 20px;
+}
+
+/* ФАКТЫ */
+
+.facts ul {
+    list-style: none;
+    max-width: 800px;
+    margin: auto;
+}
+
+.facts li {
+    padding: 15px;
+    border-bottom: 1px solid #222;
+}
+
+/* КРИТИКИ */
+
+.critics blockquote {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #111;
+    border-left: 5px solid var(--blood);
+    font-style: italic;
+}
+
+/* FOOTER */
+
+footer {
+    background: #050505;
+    padding: 60px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.knife {
+    position: absolute;
+    top: -45px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 70px;
+    text-shadow: 0 0 15px red;
+}
+
+footer p {
+    color: var(--light-gray);
+}
+
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+    <div class="hero-content">
+        <h1>DEXTER</h1>
+        <div class="meta">
+            Автор: James Manos Jr.<br>
+            Рейтинг IMDb: ★ 8.6 / 10
+        </div>
+    </div>
+</div>
+
+<!-- АКТЁРЫ -->
+<section>
+    <h2>Главные актёры</h2>
+    <div class="actors">
+
+        <div class="actor-card">
+            <div class="actor-header">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRkQl9lHr_KugzehVpB0VybGW7bv_c2IBHQ317fZnUHiVp_OPsFcicMZf9Iyv_yuvFgAwthKvlCdGN5uD1DAo7zoI0qGrf9T2sm4y8uVIX2g&s=10">
+                <h3>Michael C. Hall</h3>
+            </div>
+            <div class="actor-content">
+                <p><strong>Роль:</strong> Декстер Морган — судмедэксперт полиции Майами и серийный убийца, следующий своему «кодексу».</p>
+            </div>
+        </div>
+
+        <div class="actor-card">
+            <div class="actor-header">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7qGOM35AY0b6p3WOf7XWvuC7CoXS-dnHQfEQyQoiACEBmB_bmIyDkNVhFJjUqrjmGlITZpFxJTQ9XiA9xCi8BOKrqrKMLbQZ3NJhZ1_IY-g&s=10">
+                <h3>Jennifer Carpenter</h3>
+            </div>
+            <div class="actor-content">
+                <p><strong>Роль:</strong> Дебра Морган — сестра Декстера и детектив отдела убийств.</p>
+            </div>
+        </div>
+
+        <div class="actor-card">
+            <div class="actor-header">
+                <img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcT5imXetBb5uVhtmMtdJbPX4Zvd4HDcwpWgPg7E2aoQkBqnZ-Gdz6TB48GIC6XsQ_EWwodVwOQTDp1Hv5XP4GxLiApCnRbx5ImAEHpsr5iYdXxYg-MZR44lFwH0o5efrH0h6UZWX7hLG7nQ&s=19">
+                <h3>David Zayas</h3>
+            </div>
+            <div class="actor-content">
+                <p><strong>Роль:</strong> Анхель Батиста — детектив и позже сержант отдела убийств полиции Майами.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ФАКТЫ -->
+<section class="facts">
+    <h2>Факты о сериале</h2>
+    <ul>
+        <li>Основан на романе "Darkly Dreaming Dexter".</li>
+        <li>Премьера — 2006 год.</li>
+        <li>8 сезонов оригинального сериала.</li>
+        <li>Продолжение — "Dexter: New Blood" (2021).</li>
+    </ul>
+</section>
+
+<!-- КРИТИКИ -->
+<section class="critics">
+    <h2>Мнение критиков</h2>
+    <blockquote>
+        «Один из самых провокационных и стильных сериалов 2000-х.»
+    </blockquote>
+    <blockquote>
+        «Игра Майкла С. Холла — главная причина культового статуса проекта.»
+    </blockquote>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="knife">🔪</div>
+    <p>Неофициальный фан-сервис по сериалу Dexter.</p>
+</footer>
+
+<script>
+document.querySelectorAll(".actor-header").forEach(header => {
+    header.addEventListener("click", () => {
+        header.parentElement.classList.toggle("active");
+    });
+});
+</script>
+
+</body>
+</html>
